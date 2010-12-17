@@ -2,6 +2,16 @@
 
 Coulda web steps provides some preliminary reusable steps for Coulda.
 
+
+== Usage
+
+Write the following in your test_helper:
+
+    Coulda.default_test_case_class = Test::Unit::TestCase
+    class Test::Unit::TestCase
+      extend Coulda::WebSteps
+    end
+
 == Contributing to coulda_web_steps
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
