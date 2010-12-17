@@ -27,6 +27,7 @@ Write the following in your test_helper:
 Thanks to the following for letting me OSS this:
 * WiseView
 * Amit Lubling and Zack Cleary
+* djbrowning[http://github.com/djbrowning] for the seed of what became "#given_a"
 
 == Copyright
 
