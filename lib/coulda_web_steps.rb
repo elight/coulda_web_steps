@@ -1,3 +1,6 @@
+require 'coulda'
+require 'json'
+
 module Coulda
   module WebSteps
     # Creates an object using a factory_girl factory and creates a Given step that reads like
