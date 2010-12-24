@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{coulda_web_steps}
-  s.version = "0.6.1"
+  s.version = "0.6.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["elight"]
-  s.date = %q{2010-12-17}
-  s.description = %q{Collection of web automation steps for coulda}
+  s.date = %q{2010-12-24}
+  s.description = %q{Provides reusable steps for Coulda acceptance testing of Rack/Rails applications}
   s.email = %q{evan@tripledogdare.net}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Collection of web automation steps for coulda}
+  s.summary = %q{Provides reusable steps for Coulda acceptance testing of Rack/Rails applications}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

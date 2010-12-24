@@ -1,10 +1,26 @@
 = coulda_web_steps
 
-Coulda web steps provides some preliminary reusable steps for Coulda.
+Coulda Web Steps provides some reusable steps for Coulda acceptance testing
+of Rack/Rails applications.
+
+== Conventions
+* Factories are used to create objects
+* Factoried objects are stored in instance variables on the test object
+* Factoried objects are accessible at class scope by name using Symbols.
+
+Coulda web steps uses Symbols as a convention to reference instance variables at class scope.
+
+For instance:
+
+    when_i_visit :job, :job_instance
+
+Calls [https://github.com/jnicklas/capybara Capybara]'s #visit method
+with "job_path(@job_instance)" where job_path is mapped from :job
+(adding "_path" is a convention to support Rails) and @job_instance
+is mapped directly from :job_instance.
 
 
 == Usage
-
 Write the following in your test_helper:
 
     Coulda.default_test_case_class = Test::Unit::TestCase

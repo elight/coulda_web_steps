@@ -74,7 +74,10 @@ module Coulda
     def when_i_visit(path, *args)
       humanized_path = path.to_s.gsub /_/, " " 
       When "I visit the #{humanized_path}" do
-        visit __send__(path)
+        instance_var_args = args.inject([]) do |new_args, arg|
+          new_args << instance_variable_get("@#{arg}")
+        end
+        visit __send__(path, *instance_var_args)
       end
     end
 
