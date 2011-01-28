@@ -66,6 +66,16 @@ module Coulda
       end
     end
 
+    def then_i_should_be_on(path, *args)
+      humanized_path = path.to_s.gsub /_/, " " 
+      Then "I should be on #{humanized_path}" do
+        instance_var_args = args.inject([]) do |new_args, arg|
+          new_args << instance_variable_get("@#{arg}")
+        end
+        assert current_path, __send__(path, *instance_var_args)
+      end
+    end
+
     # Visits the page specified by *path* and creates a step like 
     # "When I visit the pork chop sandwich kitchen"
     # @param path A Symbol giving the name of the helper to invoke to generate a path
