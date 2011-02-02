@@ -66,6 +66,16 @@ module Coulda
       end
     end
 
+    def then_i_should_not_be_on(path, *args)
+      humanized_path = path.to_s.gsub /_/, " " 
+      Then "I should not be on #{humanized_path}" do
+        instance_var_args = args.inject([]) do |new_args, arg|
+          new_args << instance_variable_get("@#{arg}")
+        end
+        assert current_path != __send__(path, *instance_var_args), "I am on '#{current_path}' but I shouldn't be"
+      end
+    end
+
     def then_i_should_be_on(path, *args)
       humanized_path = path.to_s.gsub /_/, " " 
       Then "I should be on #{humanized_path}" do
