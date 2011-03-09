@@ -20,6 +20,21 @@ module Coulda
       end
     end
 
+    def then_page_should_have_selector(selector)
+      Then "page should have selector '#{selector}'" do
+        assert page.has_selector?(selector),
+          "Page is missing expected selector '#{selector}'"
+      end
+    end
+
+    def then_page_should_not_have_selector(selector)
+      Then "page should have selector '#{selector}'" do
+        assert !page.has_selector?(selector),
+          "Page has selector '#{selector}' that should not be present"
+      end
+    end
+
+
     # Asserts that the current page has *content* and a Then step that reads like 
     # "Then I should see 'You're not cookin!'"
     # @param content The content to check for.
