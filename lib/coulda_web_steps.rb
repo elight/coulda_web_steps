@@ -119,6 +119,12 @@ module Coulda
       end
     end
 
+    def save_and_open_page
+      And "I display the current page" do
+        save_and_open_page
+      end
+    end
+
     private
 
     def humanize(hash)
