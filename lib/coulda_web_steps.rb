@@ -97,7 +97,8 @@ module Coulda
         instance_var_args = args.inject([]) do |new_args, arg|
           new_args << instance_variable_get("@#{arg}")
         end
-        assert current_path, __send__(path, *instance_var_args)
+        expected_path = __send__(path, *instance_var_args)
+        assert current_path == expected_path, "I am on '#{current_path}' but I should be on '#{expected_path}'"
       end
     end
 
